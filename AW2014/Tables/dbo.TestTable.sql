@@ -4,7 +4,12 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[TestTable] (
 		[id]       [int] IDENTITY(1, 1) NOT NULL,
-		[data]     [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[data]     [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+		CONSTRAINT [PK_TestTable]
+		PRIMARY KEY
+		CLUSTERED
+		([id])
+	ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[TestTable] SET (LOCK_ESCALATION = TABLE)
